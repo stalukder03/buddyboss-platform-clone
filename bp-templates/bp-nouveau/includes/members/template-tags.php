@@ -937,6 +937,8 @@ function bp_nouveau_member_template_part() {
 			$template = 'document';
 		} elseif ( bp_is_user_video() ) {
 			$template = 'video';
+		} elseif (bp_is_current_component('courses')) {
+			$template = 'tutor-courses';
 		}
 
 		bp_nouveau_member_get_template_part( $template );
