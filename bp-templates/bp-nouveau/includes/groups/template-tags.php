@@ -1483,6 +1483,8 @@ function bp_nouveau_group_template_part() {
 			$template = 'videos';
 		} elseif ( bp_is_group_video_albums() ) {
 			$template = 'albums';
+		} elseif (bp_is_current_action('courses')) {
+			$template = 'tutor-courses';
 		}
 
 		bp_nouveau_group_get_template_part( $template );
