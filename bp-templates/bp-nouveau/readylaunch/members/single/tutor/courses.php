@@ -62,12 +62,6 @@ if ( ! function_exists( 'bb_enable_content_counts' ) || bb_enable_content_counts
 
 if ( ! empty( $course_ids ) ) {
 	$course_ids_string = implode( ',', $course_ids );
-
-	// Inject course IDs to request arrays to ensure Tutor LMS AJAX pagination 
-	// retains the post_in filter when this template is loaded via BuddyBoss readylaunch profile AJAX.
-	$_POST['tutor-course-filter-post-ids'] = $course_ids;
-	$_GET['tutor-course-filter-post-ids']  = $course_ids;
-
 	echo tutor_lms()->shortcode->tutor_course( array( 'id' => $course_ids_string, 'show_pagination' => 'on' ) );
 } else {
 	if ( 'instructor-courses' === $current_course_subtab ) {
