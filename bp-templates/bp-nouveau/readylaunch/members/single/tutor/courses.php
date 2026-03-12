@@ -19,6 +19,8 @@ if ( class_exists( 'BB_TutorLMS_Profile' ) ) {
 
 if ( 'instructor-courses' === $current_course_subtab ) {
 	$courses_list = bb_tutorlms_get_instructor_courses();
+} else if ( 'wishlist-courses' === $current_course_subtab ) {
+	$courses_list = bb_tutorlms_get_wishlist_courses();
 } else {
 	$courses_list = bb_tutorlms_get_enrolled_courses();
 }
